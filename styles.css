@@ -1,0 +1,50 @@
+.site
+{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr) 4fr 3fr 2fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "search search"
+        "filters filters"
+        "accomodations popular"
+        "activities activities"
+        "footer footer";
+
+    font-family: raleway, sans-serif;
+}
+
+.header
+{
+    grid-area: header;
+}
+
+.search
+{
+    grid-area: search;
+}
+
+.filters
+{
+    grid-area: filters;
+}
+
+.accomodations
+{
+    grid-area: accomodations;
+}
+
+.popular
+{
+    grid-area: popular;
+}
+
+.activities
+{
+    grid-area: activities;
+}
+
+.footer
+{
+    grid-area: footer;
+}
