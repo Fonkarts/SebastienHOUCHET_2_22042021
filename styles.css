@@ -1,8 +1,17 @@
+*
+{
+    margin: 8px;
+    font-family: raleway, sans-serif;
+    font-size: 12px;
+    
+}
+
 .site
 {
     display: grid;
     grid-template-rows: repeat(3, 1fr) 4fr 3fr 2fr;
     grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
     grid-template-areas: 
         "header header"
         "search search"
@@ -10,13 +19,39 @@
         "accomodations popular"
         "activities activities"
         "footer footer";
-
-    font-family: raleway, sans-serif;
+    margin: 
 }
 
 .header
 {
     grid-area: header;
+    grid-column-start: 1 / span 2;
+    grid-row-start: 1 / span 1;   
+    
+}
+
+/*.logo
+{
+    float: left;
+   
+}*/
+
+.header nav ul
+{
+    list-style: none;
+    float: right;    
+}
+
+.header nav ul li
+{
+    float: left;
+	
+}
+
+.header nav ul li a
+{
+    text-decoration: none;
+    
 }
 
 .search
@@ -27,16 +62,33 @@
 .filters
 {
     grid-area: filters;
+    
+}
+
+.filters h2
+{
+    float: left;
+}
+
+.filters ul li
+{
+    display: inline-block;
+    margin-top: 0;
+    font-weight: bold;
 }
 
 .accomodations
 {
     grid-area: accomodations;
+    background-color: #DEEBFF;
+    border-radius: 10px;
 }
 
 .popular
 {
     grid-area: popular;
+    background-color: #DEEBFF;
+    border-radius: 10px;
 }
 
 .activities
@@ -47,4 +99,23 @@
 .footer
 {
     grid-area: footer;
+    background-color: #f2f2f2;
+}
+
+.footer div
+{
+    float: left;
+    
+}
+
+.footer div ul
+{
+    padding-left: 0;
+    margin-right: 8rem;
+    margin-left: 0;
+}
+
+.footer div ul li
+{
+    list-style: none;
 }
