@@ -1,40 +1,42 @@
 *
 {
-    margin: 8px;
-    font-family: raleway, sans-serif;
-    font-size: 12px;
-    
+    margin: 0;
+    padding: 0;    
 }
 
-.site
+body
+{
+    font-family: raleway, sans-serif;
+    font-size: 1.3vw;
+}
+
+.mainGrid
 {
     display: grid;
-    grid-template-rows: repeat(3, 1fr) 4fr 3fr 2fr;
+    grid-template-rows: repeat(3, 0.9fr);
     grid-template-columns: 2fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 10px;
     grid-template-areas: 
         "header header"
         "search search"
-        "filters filters"
-        "accomodations popular"
-        "activities activities"
-        "footer footer";
-    margin: 
+        "filters filters";
+    margin: 2.5em;
+    
 }
 
 .header
 {
-    grid-area: header;
-    grid-column-start: 1 / span 2;
-    grid-row-start: 1 / span 1;   
+    grid-area: header; 
     
 }
 
-/*.logo
+.logo
 {
+    height: 2.5em;
+    width: 5em;
     float: left;
-   
-}*/
+    padding-top: 2.5em;
+}
 
 .header nav ul
 {
@@ -45,19 +47,73 @@
 .header nav ul li
 {
     float: left;
-	
+	margin: 2em;
 }
 
 .header nav ul li a
 {
     text-decoration: none;
-    
+    color: #000;
+}
+
+.header nav ul li a strong
+{
+    color: #0065FC;
 }
 
 .search
 {
     grid-area: search;
+    
 }
+
+.search p
+{
+    margin: 0.5em 0 0.5em 0;
+}
+
+.searchBox
+{
+   margin: 0.7em 0 0.7em 0;
+   width: 33vw;
+   
+   
+}
+
+#locationIcon
+{
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 10px 0 0 10px;
+    height: 4vh;
+    width: 3vw;
+    float: left;
+    margin: 0;
+}
+
+#textArea
+{
+    border: 1px solid #f2f2f2;
+    font-weight: bold;
+    font-size: 1em;
+    height: 4vh;
+    width: 20vw;
+    margin: 0;
+}
+
+#searchButton
+{
+    background-color: #0065FC;
+    color: white;
+    border-radius: 0 10px 10px 0;
+    height: 4vh;
+    width: 9vw;
+    float: right;
+    margin: 0;
+}
+
+
+
 
 .filters
 {
@@ -65,57 +121,230 @@
     
 }
 
+
 .filters h2
 {
     float: left;
+    font-size: 1em;
+    margin: 0.5em 0.5em 0.5em 0;
 }
 
 .filters ul li
 {
     display: inline-block;
-    margin-top: 0;
+    margin: 0.5em;
     font-weight: bold;
+    font-size: 1em;
 }
 
-.accomodations
+.filters ul li a
 {
-    grid-area: accomodations;
-    background-color: #DEEBFF;
-    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
 }
 
-.popular
+.filters div
 {
-    grid-area: popular;
-    background-color: #DEEBFF;
-    border-radius: 10px;
+    height: 2vh;
+    margin: 1em 0 1em 0;
+    font-size: 1em;
 }
 
-.activities
+#infoIcon
 {
-    grid-area: activities;
+    display: inline;
+    color: #0065FC;
 }
 
-.footer
+.filters p
 {
-    grid-area: footer;
+    display: inline;
+    font-size: 0.8em;
+    padding-left: 1.1em;
+}
+
+.accomodationsGrid
+{
+    display: grid;
+    grid-template-columns: 15em 15em 15em;
+    grid-template-rows: 4em 13em 13em 4em;
     background-color: #f2f2f2;
+    padding: 1em;
+    border-radius: 1em;
+    margin-right: 1em;
+}
+    
+.accTitle
+{
+    margin: 1em;
+    font-size: 1em;
+    grid-column: 1 / span 3;
+    padding-top: 0.5em;
 }
 
-.footer div
+.accomodationsGrid article
 {
-    float: left;
+    margin: 0;
+    border-radius: 1.5em;
+    border: 0.3em solid white;
+    position: relative;
+    height: 10.5em;
+    width: 13em;
+    justify-self: center;
+}
+
+.accOverlay
+{
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.8em;
+    border-radius: 0 0 1.1em 1.1em;
+    box-sizing: border-box;
+    width: auto;
+}
+
+.accOverlay h3
+{
+    font-size: 0.9em;
+}
+
+.accOverlay p
+{
+    font-size: 0.8em;
+}
+
+.accViewMore
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 1em;
+    margin-left: 1em;
+}
+
+.popularGrid
+{
+    display: grid;
+    grid-template-rows: 4em 10em 10em 10em;
+    grid-template-areas: 
+        "popularTitle popularIcon"
+        "popArticle1 popArticle1"
+        "popArticle2 popArticle2"
+        "popArticle3 popArticle3";
+    background-color: #f2f2f2;
+    border-radius: 1em; 
+    padding: 1em;
     
 }
 
-.footer div ul
+.popularTitle
+{
+    grid-area: popularTitle;
+    font-size: 1em;
+    margin: 1em;
+    padding-top: 0.5em;
+}
+
+#popularIcon
+{
+    grid-area: popularIcon;
+    margin: 1em;
+    padding: 0.5em 0 0 4.5em;
+  
+}
+
+.popularGrid article
+{
+    height: 7.5em;
+    border-radius: 1.3em;
+    border: 0.4vw solid white;
+    margin: 0 1em 1em 1em;
+    position: relative;
+    
+}
+
+.popOverlay
+{
+    background-color: white;
+    width: 10em;
+    height: auto;
+    border-radius: 0 1.1em 1.1em 0;
+    padding: 1em;
+    font-size: 0.9em;
+    position: absolute; 
+    box-sizing: border-box;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.popOverlay h3
+{
+    font-size: 0.9em;
+}
+
+.popOverlay p
+{
+    font-size: 0.8em;
+}
+
+.popArticle1
+{
+    grid-area: popArticle1;
+}
+
+.popArticle2
+{
+    grid-area: popArticle2;
+}
+
+.popArticle3
+{
+    grid-area: popArticle3;
+}
+
+
+.activities
+{
+    /*display: grid;*/
+}
+
+.footerGrid
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    margin: 0;
+    background-color: #f2f2f2;
+    
+}
+
+.footerGrid div
+{
+    float: left;
+    margin: 2em;
+}
+
+
+.footerGrid h2
+{
+    padding-bottom: 0.5em;
+    font-size: 1em;
+}
+
+.footerGrid div ul
 {
     padding-left: 0;
-    margin-right: 8rem;
+    margin-right: 6rem;
     margin-left: 0;
 }
 
-.footer div ul li
+.footerGrid div ul li
 {
     list-style: none;
+    font-size: 0.8em;
+    padding-top: 1em;
 }
