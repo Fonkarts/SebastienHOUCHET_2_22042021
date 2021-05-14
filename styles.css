@@ -186,24 +186,30 @@ body
 {
     margin: 0;
     border-radius: 1.5em;
-    border: 0.3em solid white;
-    position: relative;
+    overflow: hidden;
+    
     height: 10.5em;
     width: 13em;
     justify-self: center;
+    padding: 0.3em;
+    background: white;
+    
+}
+
+.accImg
+{
+    width: 100%;
+    height: 7em;
+    object-fit: cover;
+    border-radius: 1em 1em 0 0;
 }
 
 .accOverlay
 {
     background-color: white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding: 0.8em;
-    border-radius: 0 0 1.1em 1.1em;
-    box-sizing: border-box;
     width: auto;
+    
 }
 
 .accOverlay h3
@@ -243,7 +249,7 @@ body
 .popularTitle
 {
     grid-area: popularTitle;
-    font-size: 1em;
+    font-size: 0.9em;
     margin: 1em;
     padding-top: 0.5em;
 }
@@ -259,9 +265,12 @@ body
 .popularGrid article
 {
     height: 7.5em;
+    padding: 0.3em;
+    grid-column: 1 / span 2;
     border-radius: 1.3em;
-    border: 0.4vw solid white;
     margin: 0 1em 1em 1em;
+    background: white;
+    overflow: hidden;
     position: relative;
     
 }
@@ -269,47 +278,136 @@ body
 .popOverlay
 {
     background-color: white;
-    width: 10em;
-    height: auto;
-    border-radius: 0 1.1em 1.1em 0;
+    position: absolute;
+    left: 42%;
+    top: 6%;
     padding: 1em;
-    font-size: 0.9em;
-    position: absolute; 
-    box-sizing: border-box;
-    right: 0;
-    bottom: 0;
-    top: 0;
+    font-size: 0.5em;
 }
 
 .popOverlay h3
 {
-    font-size: 0.9em;
+    font-size: 1.9em;
 }
 
 .popOverlay p
 {
-    font-size: 0.8em;
+    font-size: 1.5em;
 }
 
-.popArticle1
+.popImg
 {
-    grid-area: popArticle1;
-}
-
-.popArticle2
-{
-    grid-area: popArticle2;
-}
-
-.popArticle3
-{
-    grid-area: popArticle3;
+    height: 100%;
+    width: 7em;
+    object-fit: cover;
+    border-radius: 1em 0 0 1em;
 }
 
 
-.activities
+.activitiesGrid
 {
-    /*display: grid;*/
+    display: grid;
+    grid-template-rows: 4em 12em 15em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "activitiesTitle activitiesTitle activitiesTitle activitiesTitle"
+        "actiArticle1 actiArticle2 actiArticle4 actiArticle5"
+        "actiArticle1 actiArticle3 actiArticle4 actiArticle6";
+    grid-auto-flow: column;
+    margin: 1.5em;
+    
+}
+
+.activitiesTitle
+{
+    grid-area: activitiesTitle;
+    grid-column: 1 / span 4;
+    margin: 1em;
+}
+
+.activitiesGrid article
+{
+    margin: 1em;
+    width: 16em;
+}
+
+.actiArticle1
+{
+    grid-row: 2 / span 2;
+    height: 21em;
+}
+
+.actiArticle3
+{
+    padding-top: 2.4em;
+}
+
+.actiArticle4
+{
+    grid-row: 2 / span 2;
+    height: 21em;
+}
+
+.actiArticle6
+{
+    padding-top: 0.4em;
+}
+
+.actiImgTall
+{
+    width: 100%;
+    height: 21em;
+    object-fit: cover;
+    border-radius: 1.2em 1.2em 0 0;
+}
+
+.actiImg2
+{
+    width: 100%;
+    height: 9.6em;
+    object-fit: cover;
+    border-radius: 1.2em 1.2em 0 0;
+}
+
+.actiImg3
+{
+    width: 100%;
+    height: 6.1em;
+    object-fit: cover;
+    border-radius: 1.2em 1.2em 0 0;
+}
+
+.actiImg5
+{
+    width: 100%;
+    height: 7.4em;
+    object-fit: cover;
+    border-radius: 1.2em 1.2em 0 0;
+}
+
+.actiImg6
+{
+    width: 100%;
+    height: 8.5em;
+    object-fit: cover;
+    border-radius: 1.2em 1.2em 0 0;
+}
+
+.actiOverlay
+{
+    background-color: white;
+    padding: 0.8em;
+    width: auto;
+    height: 2em;
+    font-size: 1vw;
+    border-radius: 0 0 1.2em 1.2em;
+
+}
+
+.actiOverlay h3
+{
+    padding: 0.3em 0.3em;
+    
 }
 
 .footerGrid
