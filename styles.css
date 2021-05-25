@@ -13,21 +13,27 @@ body
 .mainGrid
 {
     display: grid;
-    grid-template-rows: 0.9fr 1.5fr 1.2fr;
+    grid-template-rows: 0.4fr 1fr 1.3fr;
     grid-template-columns: 2fr 1fr;
-    grid-gap: 10px;
+    /*grid-gap: 10px;*/
     grid-template-areas: 
         "header header"
         "search search"
         "filters filters";
-    margin: 2.5em;
+    margin: 0 2.5em 2.5em 2.5em;
     
 }
+
+
+
+/*----------HEADER----------*/
+
+
 
 .header
 {
     grid-area: header; 
-    
+    margin-bottom: 1em;
 }
 
 .logo
@@ -47,7 +53,21 @@ body
 .header nav ul li
 {
     float: left;
-	margin: 2em 2em 2em 1.6em;;
+	margin: 0.1em 2em 2em 1.6em;
+    padding-top: 2em;
+    
+}
+
+.header li:hover
+{
+    border-top: 0.1em solid #0065FC;
+    
+}
+
+.header a:hover
+{
+    color: #0065FC;
+    
 }
 
 .header nav ul li a
@@ -62,6 +82,12 @@ body
     color: #0065FC;
 }
 
+
+
+/*----------SEARCH----------*/
+
+
+
 .search
 {
     grid-area: search;
@@ -70,14 +96,13 @@ body
 
 .search h1
 {
-    margin-top: 0.8em;
     font-size: 1.18em;
     font-weight:bolder;
 }
 
 .search p
 {
-    margin: 0.5em 0 0.5em 0;
+    margin: 0.5em 0 0.5em 0.1em;
     font-size: 0.8em;
     margin-bottom: 1em;
 }
@@ -125,8 +150,6 @@ body
     margin-top: 0.1vw;
     font-size: 1.2vw;
     padding-left: 1em;
-    
-
 }
 
 #searchButton
@@ -138,62 +161,82 @@ body
     height: 3.2vw;
     width: 8.7vw;
     padding-top: 0.35vw;
-    
     text-align: center;
     font-size: 1.4vw;
     font-weight: bold;
     position: absolute;
-    vertical-align: top;
-    
+    vertical-align: top;   
 }
 
+
+
+/*----------FILTERS----------*/
 
 
 
 .filters
 {
     grid-area: filters;
-    
+    margin-top: 1.5em;
 }
-
 
 .filters h2
 {
     float: left;
     font-size: 0.9em;
-    margin: 0.5em 2em 0.5em 0;
+    margin: 0.74em 2em 0 0.3em;
 }
 
-.filters ul li
+
+
+.filtersContainer
 {
-    display: inline-block;
-    margin: 0.5em 2em 0.5em 0.5em;
-    font-weight: bold;
-    font-size: 0.9em;
+    display: inline-flex;
+    width: auto;
+    height: 2.8vw;
+    border: 0.2vw solid #f2f2f2;
+    border-radius: 4vw;
+    border-left: none;
+    margin: 0 2.4vw 0 0;
+    padding-right: 1em;
+    align-items: center;
 }
 
-.filters ul li a
+.filtersIconContainer
+{
+    width:3vw;
+    height: 3vw;
+    background-color: #DEEBFF;
+    border-radius: 2em;
+    margin-right: 1vw;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;        
+}
+
+.filtersIconContainer i
+{
+    font-size: 1.2vw; 
+    color: #0065FC;       
+}
+
+.filtersContainer a
 {
     text-decoration: none;
-    color: #000;
-    
-}
-
-.filters div
-{
-    margin: 1em 0 0 0;
+    color: black;
+    font-size: 0.9em;
+    font-weight: bold;
 }
 
 .infoIconContainer
 {
     height: 1em;
     width: 1em;
-    
+    margin-top: 2em;
     border : 0.1em solid #f2f2f2;
     border-radius: 2em;
     display: inline-block;
     text-align: center;
-    
 }
 
 
@@ -212,21 +255,34 @@ body
     padding-left: 1.1em;
 }
 
+
+
+/*----------ACCOMODATIONS----------*/
+
+
+
 .accomodationsGrid
 {
     display: grid;
     grid-template-columns: 15em 15em 15em;
     grid-template-rows: 4em 13em 13em 4em;
     background-color: #f2f2f2;
-    padding: 1em;
+    height: 32em;
+    padding: 1em 1em 1em 2em;
     border-radius: 1em;
-    margin-right: 1em;
+    margin-right: 2em;
 }
-    
+   
+.accomodationsGrid a
+{
+    text-decoration: none;
+    color: black;
+}
+
 .accTitle
 {
-    margin: 1em;
-    font-size: 0.9em;
+    margin: 1em 1em 1em 0;
+    font-size: 1em;
     grid-column: 1 / span 3;
     padding-top: 0.5em;
 }
@@ -236,11 +292,12 @@ body
     margin: 0;
     border-radius: 1.5em;
     overflow: hidden;
-    height: 10.5em;
+    height: 10.7em;
     width: 13em;
     justify-self: center;
     padding: 0.3em;
     background: white;
+    box-shadow: 0.1vw 0.3vw 0.7vw #e6dcdc;
 }
 
 .accImg
@@ -248,13 +305,13 @@ body
     width: 100%;
     height: 7em;
     object-fit: cover;
-    border-radius: 1em 1em 0 0;
+    border-radius: 1.1em 1.1em 0 0;
 }
 
 .accOverlay
 {
     background-color: white;
-    padding: 0.8em;
+    padding: 0.4em 0.8em;
     width: auto;
 }
 
@@ -265,13 +322,25 @@ body
 
 .accOverlay p
 {
-    font-size: 0.8em;
+    margin-top: 0.1em;
+    font-size: 0.77em;
+}
+
+.blueStar
+{
+    color: #0065FC;
+    font-size: 0.5em;
+}
+
+.greyStar
+{
+    color: #f2f2f2;
+    font-size: 0.5em;
 }
 
 .accViewMoreContainer
 {
-    padding-top: 1em;
-    margin-left: 1.1em;
+    margin-left: 0.3em;
 }
 
 .accViewMore
@@ -279,9 +348,15 @@ body
     text-decoration: none;
     font-weight: bold;
     color: black;
-    font-size: 0.8em;
+    font-size: 1em;
     
 }
+
+
+
+/*----------POPULAR----------*/
+
+
 
 .popularGrid
 {
@@ -293,29 +368,38 @@ body
         "popArticle2 popArticle2"
         "popArticle3 popArticle3";
     background-color: #f2f2f2;
+    height: 32em;
     border-radius: 1em; 
     padding: 1em;
-    
+    margin-left: 0.5em;
+    position: relative;
+}
+
+.popularGrid a
+{
+    text-decoration: none;
+    color: black;
 }
 
 .popularTitle
 {
     grid-area: popularTitle;
-    font-size: 0.9em;
-    margin: 1em;
+    font-size: 1em;
+    margin: 1em 1.3em;
     padding-top: 0.5em;
 }
 
 #popularIcon
 {
     grid-area: popularIcon;
-    margin: 0.8em 1em;
-    padding: 0.5em 0 0 4.5em;  
+    position: absolute;
+    top: 1.5em;
+    right: 1.3em;
 }
 
 .popularGrid article
 {
-    height: 7.5em;
+    height: 7em;
     padding: 0.3em;
     grid-column: 1 / span 2;
     border-radius: 1.3em;
@@ -323,17 +407,17 @@ body
     background: white;
     overflow: hidden;
     position: relative;
-    
+    box-shadow: 0.1vw 0.3vw 0.7vw #e6dcdc;
 }
 
 .popOverlay
 {
     background-color: white;
     position: absolute;
-    left: 42%;
+    left: 45%;
     top: 6%;
     padding: 1em;
-    font-size: 0.5em;
+    font-size: 0.45em;
 }
 
 .popOverlay h3
@@ -343,16 +427,29 @@ body
 
 .popOverlay p
 {
+    margin-top: 0.5em;
     font-size: 1.5em;
 }
+
+.popOverlay .fas
+{
+    margin-top: 4.7em;
+    font-size: 1.1em;
+}
+
 
 .popImg
 {
     height: 100%;
-    width: 7em;
+    width: 6.8em;
     object-fit: cover;
-    border-radius: 1em 0 0 1em;
+    border-radius: 1.05em 0 0 1.05em;
 }
+
+
+
+/*----------ACTIVITIES----------*/
+
 
 
 .activitiesGrid
@@ -369,12 +466,18 @@ body
     
 }
 
+.activitiesGrid a
+{
+    text-decoration: none;
+    color: black;
+}
+
 .activitiesTitle
 {
     grid-area: activitiesTitle;
     grid-column: 1 / span 4;
     margin: 1em 1.2em 0 1.2em;
-    font-size: 0.9em;
+    font-size: 1.1em;
     align-self:center;
 }
 
@@ -382,6 +485,7 @@ body
 {
     margin: 1em;
     width: 16em;
+    
 }
 
 .actiArticle1
@@ -392,7 +496,7 @@ body
 
 .actiArticle3
 {
-    padding-top: 2.4em;
+    padding-top: 2.9em;
 }
 
 .actiArticle4
@@ -406,12 +510,18 @@ body
     padding-top: 0.4em;
 }
 
+.activitiesGrid img
+{
+    box-shadow: 0.08vw -0.05vw 0.6vw #f2f2f2;
+}
+
 .actiImgTall
 {
     width: 100%;
     height: 21em;
     object-fit: cover;
     border-radius: 1.2em 1.2em 0 0;
+    
 }
 
 .actiImg2
@@ -454,7 +564,7 @@ body
     height: 2em;
     font-size: 1vw;
     border-radius: 0 0 1.2em 1.2em;
-
+    box-shadow: 0.08vw 0.4vw 0.6vw #f2f2f2;
 }
 
 .actiOverlay h3
@@ -462,6 +572,12 @@ body
     padding: 0.3em 0.3em;
     
 }
+
+
+
+/*----------FOOTER----------*/
+
+
 
 .footerGrid
 {
@@ -483,13 +599,13 @@ body
 .footerGrid h2
 {
     padding-bottom: 0.5em;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .footerGrid div ul
 {
     padding-left: 0;
-    margin-right: 6rem;
+    margin-right: 6em;
     margin-left: 0;
 }
 
@@ -498,4 +614,10 @@ body
     list-style: none;
     font-size: 0.8em;
     padding-top: 1em;
+}
+
+.footerGrid div ul li a
+{
+    text-decoration: none;
+    color: black;
 }
