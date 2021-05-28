@@ -55,13 +55,13 @@ body
     float: left;
 	margin: 0.1em 2em 2em 1.6em;
     padding-top: 2em;
+    border-top: 0.15em solid white;
     
 }
 
 .header li:hover
 {
-    border-top: 0.1em solid #0065FC;
-    
+    border-top: 0.15em solid #0065FC;
 }
 
 .header a:hover
@@ -75,6 +75,7 @@ body
     text-decoration: none;
     color: #000;
     font-size: 0.85em;
+    font-weight: 500;
 }
 
 .header nav ul li a strong
@@ -96,14 +97,15 @@ body
 
 .search h1
 {
-    font-size: 1.18em;
-    font-weight:bolder;
+    font-size: 1.15em;
+    font-weight:800;
 }
 
 .search p
 {
     margin: 0.5em 0 0.5em 0.1em;
-    font-size: 0.8em;
+    font-size: 0.82em;
+    font-weight: 500;
     margin-bottom: 1em;
 }
 
@@ -142,7 +144,8 @@ body
 
 #textArea
 {
-    font-weight: bold;
+    font-family: raleway, sans-serif;
+    font-weight: 800;
     border: none;
     height: 3vw;
     width: 16vw;
@@ -154,6 +157,7 @@ body
 
 #searchButton
 {
+    font-family: raleway, sans-serif;
     background-color: #0065FC;
     color: white;
     border-radius: 0 0.9vw 0.9vw 0;
@@ -184,7 +188,8 @@ body
 {
     float: left;
     font-size: 0.9em;
-    margin: 0.74em 2em 0 0.3em;
+    font-weight: 800;
+    margin: 0.81em 2em 0 0.3em;
 }
 
 
@@ -225,7 +230,14 @@ body
     text-decoration: none;
     color: black;
     font-size: 0.9em;
-    font-weight: bold;
+    font-weight: 800;
+}
+
+.filtersContainer:hover
+{
+    background: linear-gradient(#0065FC, #DEEBFF);
+    transform: scale(1.1);
+    transition: 500ms all;
 }
 
 .infoIconContainer
@@ -252,6 +264,7 @@ body
 {
     display: inline-block;
     font-size: 0.8em;
+    font-weight: 500;
     padding-left: 1.1em;
 }
 
@@ -264,13 +277,13 @@ body
 .accomodationsGrid
 {
     display: grid;
-    grid-template-columns: 15em 15em 15em;
-    grid-template-rows: 4em 13em 13em 4em;
+    grid-template-columns: 14.8em 14.8em 14.8em;
+    grid-template-rows: 4em 12.2em 12.2em 4em;
     background-color: #f2f2f2;
-    height: 32em;
-    padding: 1em 1em 1em 2em;
+    height: 31.5em;
+    padding: 1em 1.4em 1em 1.4em;
     border-radius: 1em;
-    margin-right: 2em;
+    margin-right: 1.5em;
 }
    
 .accomodationsGrid a
@@ -281,31 +294,31 @@ body
 
 .accTitle
 {
-    margin: 1em 1em 1em 0;
-    font-size: 1em;
+    margin: 0.7em 1em 1em 0.7em;
+    font-size: 1.15em;
     grid-column: 1 / span 3;
-    padding-top: 0.5em;
+    padding-top: 0.4em;
 }
 
 .accomodationsGrid article
 {
     margin: 0;
-    border-radius: 1.5em;
+    border-radius: 1.2em;
     overflow: hidden;
-    height: 10.7em;
-    width: 13em;
+    height: 9.9em;
+    width: 12.5em;
     justify-self: center;
     padding: 0.3em;
     background: white;
-    box-shadow: 0.1vw 0.3vw 0.7vw #e6dcdc;
+    box-shadow: 0.1vw 0.3vw 0.7vw #dfd6d6;
 }
 
 .accImg
 {
     width: 100%;
-    height: 7em;
+    height: 6em;
     object-fit: cover;
-    border-radius: 1.1em 1.1em 0 0;
+    border-radius: 0.9em 0.9em 0 0;
 }
 
 .accOverlay
@@ -317,36 +330,45 @@ body
 
 .accOverlay h3
 {
-    font-size: 0.9em;
+    font-size: 0.83em;
+    font-weight: 800;
 }
 
 .accOverlay p
 {
     margin-top: 0.1em;
     font-size: 0.77em;
+    font-weight: 500;
+}
+
+.starsContainer
+{
+    display: flex;
+    font-size: 0.65em;
+    padding-top: 0.8em;
 }
 
 .blueStar
 {
     color: #0065FC;
-    font-size: 0.5em;
+    padding-right: 0.1em;
 }
 
 .greyStar
 {
     color: #f2f2f2;
-    font-size: 0.5em;
+    padding-right: 0.1em;
 }
 
 .accViewMoreContainer
 {
-    margin-left: 0.3em;
+    margin: 0.45em 0 0 1.1em;
 }
 
 .accViewMore
 {
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 800;
     color: black;
     font-size: 1em;
     
@@ -361,16 +383,16 @@ body
 .popularGrid
 {
     display: grid;
-    grid-template-rows: 4em 10em 10em 10em;
+    grid-template-rows: 4em 9.55em 9.55em 9.55em;
     grid-template-areas: 
         "popularTitle popularIcon"
         "popArticle1 popArticle1"
         "popArticle2 popArticle2"
         "popArticle3 popArticle3";
     background-color: #f2f2f2;
-    height: 32em;
+    height: 31.5em;
     border-radius: 1em; 
-    padding: 1em;
+    padding: 1em 0.9em;
     margin-left: 0.5em;
     position: relative;
 }
@@ -384,16 +406,16 @@ body
 .popularTitle
 {
     grid-area: popularTitle;
-    font-size: 1em;
-    margin: 1em 1.3em;
-    padding-top: 0.5em;
+    font-size: 1.15em;
+    margin: 0.7em 1.3em 0.7em 0.9em;
+    padding-top: 0.4em;
 }
 
 #popularIcon
 {
     grid-area: popularIcon;
     position: absolute;
-    top: 1.5em;
+    top: 1.45em;
     right: 1.3em;
 }
 
@@ -402,39 +424,43 @@ body
     height: 7em;
     padding: 0.3em;
     grid-column: 1 / span 2;
-    border-radius: 1.3em;
+    border-radius: 1em;
     margin: 0 1em 1em 1em;
     background: white;
     overflow: hidden;
     position: relative;
-    box-shadow: 0.1vw 0.3vw 0.7vw #e6dcdc;
+    box-shadow: 0.1vw 0.3vw 0.7vw #dfd6d6;
 }
 
 .popOverlay
 {
     background-color: white;
     position: absolute;
-    left: 45%;
-    top: 6%;
-    padding: 1em;
+    left: 42%;
+    top: 0%;
+    bottom: 0%;
+    padding: 1.7em 4em 1em 0.8em;
     font-size: 0.45em;
 }
 
 .popOverlay h3
 {
     font-size: 1.9em;
+    font-weight: 800;
 }
 
 .popOverlay p
 {
     margin-top: 0.5em;
-    font-size: 1.5em;
+    font-size: 1.65em;
+    font-weight: 500;
 }
 
-.popOverlay .fas
+.popOverlay .starsContainer
 {
-    margin-top: 4.7em;
-    font-size: 1.1em;
+    margin-top: 3em;
+    padding-right: 0.1em;
+    font-size: 1.35em;
 }
 
 
@@ -443,7 +469,7 @@ body
     height: 100%;
     width: 6.8em;
     object-fit: cover;
-    border-radius: 1.05em 0 0 1.05em;
+    border-radius: 0.7em 0 0 0.7em;
 }
 
 
@@ -510,11 +536,6 @@ body
     padding-top: 0.4em;
 }
 
-.activitiesGrid img
-{
-    box-shadow: 0.08vw -0.05vw 0.6vw #f2f2f2;
-}
-
 .actiImgTall
 {
     width: 100%;
@@ -563,14 +584,20 @@ body
     width: auto;
     height: 2em;
     font-size: 1vw;
+    font-weight: 800;
     border-radius: 0 0 1.2em 1.2em;
-    box-shadow: 0.08vw 0.4vw 0.6vw #f2f2f2;
 }
 
 .actiOverlay h3
 {
     padding: 0.3em 0.3em;
     
+}
+
+.actiArticleContainer
+{
+    border-radius: 1.2em;
+    box-shadow: 0.08vw 0.4vw 0.6vw #f2f2f2;
 }
 
 
@@ -600,6 +627,7 @@ body
 {
     padding-bottom: 0.5em;
     font-size: 0.9em;
+    font-weight: 800;
 }
 
 .footerGrid div ul
@@ -613,6 +641,7 @@ body
 {
     list-style: none;
     font-size: 0.8em;
+    font-weight: 500;
     padding-top: 1em;
 }
 
@@ -621,3 +650,14 @@ body
     text-decoration: none;
     color: black;
 }
+
+/*----------MEDIA QUERIES----------*/
+
+/*
+@media screen and (max-width: 400px) 
+{
+    body 
+    {
+        background-color: #0065FC;
+    }  
+}*/
