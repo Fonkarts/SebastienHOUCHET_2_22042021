@@ -15,19 +15,19 @@ body
     display: grid;
     grid-template-rows: 0.4fr 1fr 1.3fr;
     grid-template-columns: 2fr 1fr;
-    /*grid-gap: 10px;*/
     grid-template-areas: 
         "header header"
         "search search"
-        "filters filters";
+        "filters filters"
+        "accomodations popular";
     margin: 0 2.5em 2.5em 2.5em;
     
 }
 
 
-
-/*----------HEADER----------*/
-
+/*----------------------------
+------------HEADER------------
+----------------------------*/
 
 
 .header
@@ -44,10 +44,16 @@ body
     padding-top: 2.5em;
 }
 
+.header nav
+{
+    position: relative;
+}
+
 .header nav ul
 {
     list-style: none;
-    float: right;    
+    float: right;
+    margin-right: 7em;    
 }
 
 .header nav ul li
@@ -67,7 +73,6 @@ body
 .header a:hover
 {
     color: #0065FC;
-    
 }
 
 .header nav ul li a
@@ -78,14 +83,30 @@ body
     font-weight: 500;
 }
 
-.header nav ul li a strong
+.header nav a strong
 {
+    position: absolute;
+    right: 2em;
+    top: 0;
+    padding-top: 2.62em;
+    margin: 0.1em;
     color: #0065FC;
+    border-top: 0.15em solid white;
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.header strong:hover
+{
+    border-top: 0.15em solid #0065FC;
 }
 
 
 
-/*----------SEARCH----------*/
+/*----------------------------
+------------SEARCH------------
+----------------------------*/
 
 
 
@@ -137,11 +158,6 @@ body
     padding-left: 0.1vw;
 }
 
-#textarea::placeholder
-{
-    color: black;
-}
-
 #textArea
 {
     font-family: raleway, sans-serif;
@@ -154,6 +170,12 @@ body
     font-size: 1.2vw;
     padding-left: 1em;
 }
+
+#textArea::placeholder
+{
+    color: black;
+}
+
 
 #searchButton
 {
@@ -172,9 +194,16 @@ body
     vertical-align: top;   
 }
 
+.searchIcon
+{
+    display: none;
+}
 
 
-/*----------FILTERS----------*/
+
+/*-----------------------------
+------------FILTERS------------
+-----------------------------*/
 
 
 
@@ -270,12 +299,15 @@ body
 
 
 
-/*----------ACCOMODATIONS----------*/
+/*-----------------------------------
+------------ACCOMODATIONS------------
+-----------------------------------*/
 
 
 
 .accomodationsGrid
 {
+    grid-area: "accomodations";
     display: grid;
     grid-template-columns: 14.8em 14.8em 14.8em;
     grid-template-rows: 4em 12.2em 12.2em 4em;
@@ -376,12 +408,15 @@ body
 
 
 
-/*----------POPULAR----------*/
+/*-----------------------------
+------------POPULAR------------
+-----------------------------*/
 
 
 
 .popularGrid
 {
+    grid-area: "popular";
     display: grid;
     grid-template-rows: 4em 9.55em 9.55em 9.55em;
     grid-template-areas: 
@@ -474,7 +509,9 @@ body
 
 
 
-/*----------ACTIVITIES----------*/
+/*--------------------------------
+------------ACTIVITIES------------
+--------------------------------*/
 
 
 
@@ -602,8 +639,9 @@ body
 
 
 
-/*----------FOOTER----------*/
-
+/*----------------------------
+------------FOOTER------------
+----------------------------*/
 
 
 .footerGrid
@@ -651,13 +689,374 @@ body
     color: black;
 }
 
-/*----------MEDIA QUERIES----------*/
 
-/*
-@media screen and (max-width: 400px) 
+
+/*-----------------------------
+---------MEDIA QUERIES---------
+-----------------------------*/
+
+
+
+@media screen and (max-width: 615px) 
 {
-    body 
+    .mainGrid
     {
-        background-color: #0065FC;
+        margin: 0;
+        /*grid-column: 1fr;
+        grid-template-areas: 
+            "header header"
+            "search search"
+            "filters filters"
+            "popular popular"
+            "accomodations accomodations";*/
+    }
+
+
+/*----------------------------
+------------HEADER------------
+----------------------------*/
+
+
+    .logo
+    {
+        font-size: 5vw;
+        padding: 5.5vw 0 0 6vw;
+    }
+
+    .header nav
+    {
+        height: 40vw;
+    }
+
+    .header nav ul 
+    {
+        float: none;
+        display: inline-flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .header nav ul li
+    {
+        margin: 4.5vw 0 6vw 0;
+        padding-bottom: 4vw;
+        border-bottom: 1vw solid #111010;
+        width: 100%;
+    }
+
+    .header nav ul li:hover
+    {
+        border-top: white;
+        border-color: #0065FC;
+    }
+
+    .header nav ul li a
+    {
+        font-size: 4vw;
+        
+    }
+
+    #accomodationsLink
+    {
+        padding-left: 11vw;
+    }
+
+    #popularLink
+    {
+        padding-left: 15vw;
+    }
+
+    .header nav a strong
+    {
+        font-size: 4vw;
+        font-weight: 800;
+    }
+
+    .header strong:hover
+    {
+        border-color: white;
+    }
+
+
+/*----------------------------
+------------SEARCH------------
+----------------------------*/
+
+    .search
+    {
+        margin: 0 6vw;
+    }
+
+    .search h1
+    {
+        font-size: 5.82vw;
+    }
+
+    .search p 
+    {
+        font-size: 4.2vw;
+        margin-bottom: 9.5vw;
+    }
+
+    .searchBox
+    {
+        width: auto;
+        height: 13vw;
+        border-radius: 4vw;
+        display: inline-flex;
+        align-self: center;
+    }
+
+    .locationIconContainer
+    {
+       /* width: 14vw;
+        height: 12vw;*/
+    }
+
+    #locationIcon
+    {
+        width: 14vw;
+        height: 13vw;
+        font-size: 4.7vw;
+        padding-top: 4vw;
+    }
+
+    #textArea
+    {
+        margin: 0.23vw 0 0 0;
+        padding: 0;
+        height: 12.5vw;
+        width: 67vw;
+    }
+
+    #textArea::placeholder
+    {
+        font-size: 4.5vw;
+        padding-left: 4vw;
+    }
+
+    #searchButton
+    {
+        height: 13vw;
+        width: 13vw;
+        border-radius: 4vw;
+        position: absolute;
+        right: -6vw;
+    }
+
+    #searchButton p 
+    {
+        display: none;
+    }
+
+    .searchIcon
+    {
+        display: block;
+        font-size: 4vw;
+    }
+
+
+/*-----------------------------
+------------FILTERS------------
+-----------------------------*/
+
+    .filters
+    {
+        margin: 0 6vw;
+    }
+
+    .filters h2
+    {
+        font-size: 4.7vw;
+        float: none;
+        margin: 9.4vw 0 5vw 0;
+    }
+
+    .filters p 
+    {
+        font-size: 4vw;
+    }
+
+/*-----------------------------------
+------------ACCOMODATIONS------------
+-----------------------------------*/
+
+
+    .accomodationsGrid
+    {
+        display: inline;
+        grid-column: 1 / span2;
+        /*grid-template-rows: 18vw repeat(5, 55vw) 15vw;
+        grid-template-areas: 
+            "accTitle"
+            "accArticle1"
+            "accArticle2"
+            "accArticle3"
+            "accArticle4"
+            "accArticle5"
+            "accArticle6"
+            "accViewMore";*/
+        background-color: white;
+        height: 280em;
+        margin: 0 3.7vw;
+    }
+
+    .accTitle
+    {
+        font-size: 5.6vw;
+        margin: 3vw 0 6vw 0;
+    }
+
+    .accomodationsGrid article
+    {
+        width: 100%;
+        height: 48.6vw;
+        margin-bottom: 3.3vw;
+        border-radius: 6vw;
+        border: 1.3vw solid white;
+        box-shadow: 0.4vw 0.8vw 1.4vw 0.2vw #f2f2f2;
+    }
+
+    .accImg
+    {
+        height: 29.9vw;
+        border-radius: 5vw 5vw 0 0;
+    }
+
+    .accOverlay
+    {
+        font-size: 5vw;
+    }
+
+    .accViewMoreContainer
+    {
+        font-size: 5vw;
+        margin: 10vw 0 0 1vw;
+    }
+
+
+/*-----------------------------
+------------POPULAR------------
+-----------------------------*/
+
+
+    .popularGrid
+    {
+        float: left;
+    }
+
+
+/*--------------------------------
+------------ACTIVITIES------------
+--------------------------------*/
+
+
+    .activitiesGrid
+    {
+        grid-template-rows: 18vw repeat(5, 55vw);
+        grid-template-areas: 
+            "activitiesTitle"
+            "actiArticle1"
+            "actiArticle2"
+            "actiArticle3"
+            "actiArticle4"
+            "actiArticle5"
+            "actiArticle6";
+    }
+
+    .activitiesTitle
+    {
+        grid-column: 1 / span4;
+        margin: 2vw  0 2vw 4vw;
+        font-size: 5.5vw;
+    }
+
+    .actiArticleContainer
+    {
+       
+        box-shadow: 0.5vw 1vw 2vw 0.2vw #f2f2f2;
+        border-radius: 5vw;
+        margin: 1vw 3vw;
+    }
+
+    .activitiesGrid article
+    {
+        grid-column: 1 / span 4;
+        width: auto;
+    }
+
+    .activitiesGrid img
+    {
+        height: 35.5vw;
+        border-radius: 5vw 5vw 0 0;
+    }
+    .actiOverlay
+    {
+        font-size: 3.5vw;
+        height: 8vw;
+        border-radius: 0 0 5vw 5vw;
+    }
+
+    .actiArticle1
+    {
+        grid-row-start: 2;
+    }
+
+    .actiArticle2
+    {
+        grid-row-start: 3;
+    }
+
+    .actiArticle3
+    {
+        grid-row-start: 4;
+    }
+
+    .actiArticle4
+    {
+        grid-row-start: 5;
+    }
+
+    .actiArticle5
+    {
+        grid-row-start: 6;
+    }
+
+    .actiArticle6
+    {
+        grid-row-start: 7;
+    }
+
+
+/*----------------------------
+------------FOOTER------------
+----------------------------*/
+
+
+    .footerGrid
+    {
+        grid-template-rows: 42vw repeat(2, 37vw);
+        grid-template-areas: 
+        "div"
+        "div"
+        "div";
+        height: 104em;
+        padding-top: 12vw;
+    }
+
+    .footerGrid h2
+    {
+       margin-top: 1.4vw;
+    }
+
+    .footerGrid div
+    {
+        grid-area: "div";
+        grid-column: 1 / span 3;
+        font-size: 5vw;
+        line-height: 4vw;
+        margin: 0 0 0 7vw;
     }  
-}*/
+}
