@@ -10,7 +10,7 @@ body
     font-size: 1.3vw;
 }
 
-.mainGrid
+.upperGrid
 {
     display: grid;
     grid-template-rows: 0.4fr 1fr 1.3fr;
@@ -18,9 +18,8 @@ body
     grid-template-areas: 
         "header header"
         "search search"
-        "filters filters"
-        "accomodations popular";
-    margin: 0 2.5em 2.5em 2.5em;
+        "filters filters";
+    margin: 0 2.5em;
     
 }
 
@@ -305,15 +304,25 @@ body
 
 
 
+.accPopGrid
+{
+    display: grid;
+    grid-template-areas:
+        "accomodationsGrid accomodationsGrid"
+        "popularGrid popularGrid";
+        grid-template-columns: 48em 1fr; 
+    margin: 0 2.5em;
+}
+
 .accomodationsGrid
 {
-    grid-area: "accomodations";
+    grid-area: "accomodationsGrid";
     display: grid;
     grid-template-columns: 14.8em 14.8em 14.8em;
     grid-template-rows: 4em 12.2em 12.2em 4em;
     background-color: #f2f2f2;
     height: 31.5em;
-    padding: 1em 1.4em 1em 1.4em;
+    padding: 1em 1em 1em 1em;
     border-radius: 1em;
     margin-right: 1.5em;
 }
@@ -416,7 +425,7 @@ body
 
 .popularGrid
 {
-    grid-area: "popular";
+    grid-area: "popularGrid";
     display: grid;
     grid-template-rows: 4em 9.55em 9.55em 9.55em;
     grid-template-areas: 
@@ -699,9 +708,10 @@ body
 
 @media screen and (max-width: 615px) 
 {
-    .mainGrid
+    .upperGrid
     {
         margin: 0;
+        grid-template-rows: 0.4fr 0.7fr 1.3fr;
         /*grid-column: 1fr;
         grid-template-areas: 
             "header header"
@@ -720,12 +730,12 @@ body
     .logo
     {
         font-size: 5vw;
-        padding: 5.5vw 0 0 6vw;
+        padding: 5.5vw 0 0 4.5vw;
     }
 
     .header nav
     {
-        height: 40vw;
+        height: 42vw;
     }
 
     .header nav ul 
@@ -742,7 +752,7 @@ body
     {
         margin: 4.5vw 0 6vw 0;
         padding-bottom: 4vw;
-        border-bottom: 1vw solid #111010;
+        border-bottom: 1vw solid #f2f2f2;
         width: 100%;
     }
 
@@ -750,6 +760,7 @@ body
     {
         border-top: white;
         border-color: #0065FC;
+        
     }
 
     .header nav ul li a
@@ -760,18 +771,19 @@ body
 
     #accomodationsLink
     {
-        padding-left: 11vw;
+        padding-left: 10vw;
     }
 
     #popularLink
     {
-        padding-left: 15vw;
+        padding-left: 17vw;
     }
 
     .header nav a strong
     {
         font-size: 4vw;
         font-weight: 800;
+        right: 4.7vw;
     }
 
     .header strong:hover
@@ -786,7 +798,7 @@ body
 
     .search
     {
-        margin: 0 6vw;
+        margin: 0 5vw;
     }
 
     .search h1
@@ -797,22 +809,17 @@ body
     .search p 
     {
         font-size: 4.2vw;
-        margin-bottom: 9.5vw;
+        margin: 3.3vw 0 9.5vw 0;
     }
 
     .searchBox
     {
+        margin: 0 0.9vw;
         width: auto;
         height: 13vw;
         border-radius: 4vw;
         display: inline-flex;
         align-self: center;
-    }
-
-    .locationIconContainer
-    {
-       /* width: 14vw;
-        height: 12vw;*/
     }
 
     #locationIcon
@@ -826,15 +833,22 @@ body
     #textArea
     {
         margin: 0.23vw 0 0 0;
-        padding: 0;
+        padding: 2vw 0 0 4vw;
         height: 12.5vw;
-        width: 67vw;
+        width: 67.9vw;
+        
     }
 
     #textArea::placeholder
     {
         font-size: 4.5vw;
-        padding-left: 4vw;
+    }
+
+    #textArea:focus
+    {
+        font-size: 4.5vw;
+        padding: 0 9vw 0.5vw 4vw;
+        
     }
 
     #searchButton
@@ -864,58 +878,154 @@ body
 
     .filters
     {
-        margin: 0 6vw;
+        margin: 0 4.7vw;
     }
 
     .filters h2
     {
         font-size: 4.7vw;
         float: none;
-        margin: 9.4vw 0 5vw 0;
+        margin: 9.4vw 0 3.3vw 0;
     }
 
     .filters p 
     {
+        margin-top: 3.06vw;
         font-size: 4vw;
+    }
+
+    .filtersContainer
+    {
+        height: 11.7vw;
+        border: 0.7vw solid #f2f2f2;
+        border-left: none;
+        border-radius: 6vw;
+        margin: 0 3vw 3vw 0;
+        padding-right: 4.2vw;
+    }
+
+    .filtersIconContainer
+    {
+        width: 12.4vw;
+        height: 12.4vw;
+        border-radius: 6vw;
+        margin-right: 2.5vw;
+    }
+
+    .filtersIconContainer i 
+    {
+        font-size: 5.2vw;
+    }
+
+    .filtersContainer a 
+    {
+        font-size: 4vw;
+    }
+
+    .filtersParagraphContainer
+    {
+        display: inline-flex;
+        margin: 3vw 0 0 0.2vw;
+    }
+
+    .infoIconContainer
+    {
+        justify-content: center;
+        align-items: center;
+        height: 5.2vw;
+        width: 7.2vw;
+        border-radius: 3vw;
+        border-color: #f2f2f2;
+    }
+
+    #infoIcon
+    {
+        font-size: 2.8vw;
+        padding-top: 0.3vw;
+    }
+
+
+/*-----------------------------
+------------POPULAR------------
+-----------------------------*/
+
+    .accPopGrid
+    {
+        display: grid;
+        grid-template-rows: 166vw 368vw;
+        grid-template-columns: 1fr;
+        margin: 0 0 10vw 0;
+    }
+
+    .popularGrid
+    {
+        margin: 10vw 0;
+        grid-template-rows: 22.7vw repeat(3, 41vw);
+        height: 151vw;
+    }
+
+    .popularTitle
+    {
+        margin: 8.5vw 3.9vw;
+        padding: 0;
+        font-size: 5.6vw;
+    }
+
+    #popularIcon
+    {
+        font-size: 6vw;
+        top: 9.1vw;
+        right: 3.9vw;
+    }
+
+    .popularGrid article
+    {
+        margin: 0 3.9vw;
+        height: 37.2vw;
+        border-radius: 6vw;
+    }
+
+    .popImg
+    {
+        padding: 1vw;
+        width: 34vw;
+        height: 35.1vw;
+        border-radius: 6vw 0 0 6vw;
+    }
+
+    .popOverlay
+    {
+        font-size: 2.2vw;
+
     }
 
 /*-----------------------------------
 ------------ACCOMODATIONS------------
 -----------------------------------*/
 
-
     .accomodationsGrid
     {
         display: inline;
         grid-column: 1 / span2;
-        /*grid-template-rows: 18vw repeat(5, 55vw) 15vw;
-        grid-template-areas: 
-            "accTitle"
-            "accArticle1"
-            "accArticle2"
-            "accArticle3"
-            "accArticle4"
-            "accArticle5"
-            "accArticle6"
-            "accViewMore";*/
+        grid-row: 2;
         background-color: white;
-        height: 280em;
-        margin: 0 3.7vw;
+        /*height: 280em;*/
+        margin: 0 3.9vw;
     }
 
     .accTitle
     {
         font-size: 5.6vw;
-        margin: 3vw 0 6vw 0;
+        margin: 3vw 0 6vw 0.1vw;
     }
 
     .accomodationsGrid article
     {
-        width: 100%;
-        height: 48.6vw;
+        width: auto;
+        height: 50vw;
         margin-bottom: 3.3vw;
         border-radius: 6vw;
-        border: 1.3vw solid white;
+        border: 1.1vw solid white;
         box-shadow: 0.4vw 0.8vw 1.4vw 0.2vw #f2f2f2;
     }
 
@@ -932,19 +1042,8 @@ body
 
     .accViewMoreContainer
     {
-        font-size: 5vw;
-        margin: 10vw 0 0 1vw;
-    }
-
-
-/*-----------------------------
-------------POPULAR------------
------------------------------*/
-
-
-    .popularGrid
-    {
-        float: left;
+        font-size: 4.5vw;
+        margin: 9vw 0 0 0;
     }
 
 
@@ -969,7 +1068,7 @@ body
     .activitiesTitle
     {
         grid-column: 1 / span4;
-        margin: 2vw  0 2vw 4vw;
+        margin: 2vw  0 2vw 3.5vw;
         font-size: 5.5vw;
     }
 
@@ -978,7 +1077,7 @@ body
        
         box-shadow: 0.5vw 1vw 2vw 0.2vw #f2f2f2;
         border-radius: 5vw;
-        margin: 1vw 3vw;
+        margin: 1vw 2.5vw;
     }
 
     .activitiesGrid article
@@ -1012,6 +1111,7 @@ body
     .actiArticle3
     {
         grid-row-start: 4;
+        padding-top: 0;
     }
 
     .actiArticle4
@@ -1037,13 +1137,14 @@ body
 
     .footerGrid
     {
-        grid-template-rows: 42vw repeat(2, 37vw);
+        grid-template-rows: 42vw repeat(2, 34vw);
+        grid-template-columns: 1fr;
         grid-template-areas: 
         "div"
         "div"
         "div";
-        height: 104em;
         padding-top: 12vw;
+        margin-top: 11vw;
     }
 
     .footerGrid h2
@@ -1054,7 +1155,6 @@ body
     .footerGrid div
     {
         grid-area: "div";
-        grid-column: 1 / span 3;
         font-size: 5vw;
         line-height: 4vw;
         margin: 0 0 0 7vw;
