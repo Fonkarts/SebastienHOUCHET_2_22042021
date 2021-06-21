@@ -1,3 +1,17 @@
+/*------------------------------------------------------------------
+Vous avez la possibilité de naviguer plus facilement, via CTRL+F,
+en tapant le nom d'une section parmi: 
+HEADER/SEARCH/FILTERS/ACCOMODATIONS/POPULAR/ACTIVITIES/FOOTER
+Ainsi que le nom de la vue souhaitée : 
+DESKTOP/INTERMEDIAIRE/MOBILE
+Exemple : "SEARCH MOBILE"
+------------------------------------------------------------------*/
+
+/*-----------------------------
+----------VUE DESKTOP----------
+-----------------------------*/
+
+
 *
 {
     margin: 0;
@@ -24,9 +38,9 @@ body
 }
 
 
-/*----------------------------
-------------HEADER------------
-----------------------------*/
+/*------------------------------------
+------------HEADER DESKTOP------------
+------------------------------------*/
 
 
 .header
@@ -59,18 +73,15 @@ body
 {
     float: left;
 	margin: 0.1em 2em 2em 1.6em;
-    padding-top: 2em;
+    padding-top: 2.6em;
     border-top: 0.15em solid white;
-    
+    font-size: 0.85em;
+    font-weight: 500;
 }
 
 .header li:hover
 {
     border-top: 0.15em solid #0065FC;
-}
-
-.header a:hover
-{
     color: #0065FC;
 }
 
@@ -78,8 +89,6 @@ body
 {
     text-decoration: none;
     color: #000;
-    font-size: 0.85em;
-    font-weight: 500;
 }
 
 .header nav a strong
@@ -103,9 +112,9 @@ body
 
 
 
-/*----------------------------
-------------SEARCH------------
-----------------------------*/
+/*------------------------------------
+------------SEARCH DESKTOP------------
+------------------------------------*/
 
 
 
@@ -161,18 +170,23 @@ body
 {
     font-family: raleway, sans-serif;
     font-weight: 800;
+    font-size: 1.4vw;
     border: none;
     height: 3vw;
     width: 16vw;
-    padding-top: 0.1vw;
+    padding: 0.1vw 1vw 0 1vw;
     margin-top: 0.1vw;
-    font-size: 1.2vw;
-    padding-left: 1em;
 }
 
 #textArea::placeholder
 {
     color: black;
+}
+
+#textArea::-moz-placeholder
+{
+    color: black;
+    opacity: 1;
 }
 
 
@@ -200,9 +214,9 @@ body
 
 
 
-/*-----------------------------
-------------FILTERS------------
------------------------------*/
+/*-------------------------------------
+------------FILTERS DESKTOP------------
+-------------------------------------*/
 
 
 
@@ -233,6 +247,8 @@ body
     margin: 0 2.4vw 0 0;
     padding-right: 1em;
     align-items: center;
+    transform: scale(1);
+    transition: 500ms all;
 }
 
 .filtersIconContainer
@@ -263,7 +279,9 @@ body
 
 .filtersContainer:hover
 {
-    background: linear-gradient(#0065FC, #DEEBFF);
+    background: -moz-radial-gradient(#0065FC, #DEEBFF);
+    background: radial-gradient(#DEEBFF, #0065FC);
+    -moz-transform: scale(1.1);
     transform: scale(1.1);
     transition: 500ms all;
 }
@@ -298,25 +316,24 @@ body
 
 
 
-/*-----------------------------------
-------------ACCOMODATIONS------------
------------------------------------*/
+/*-------------------------------------------
+------------ACCOMODATIONS DESKTOP------------
+-------------------------------------------*/
 
-
+article 
+{
+    /*transition: 50ms all;*/
+}
 
 .accPopGrid
 {
     display: grid;
-    grid-template-areas:
-        "accomodationsGrid accomodationsGrid"
-        "popularGrid popularGrid";
-        grid-template-columns: 48em 1fr; 
+    grid-template-columns: 48em 1fr; 
     margin: 0 2.5em;
 }
 
 .accomodationsGrid
 {
-    grid-area: "accomodationsGrid";
     display: grid;
     grid-template-columns: 14.8em 14.8em 14.8em;
     grid-template-rows: 4em 12.2em 12.2em 4em;
@@ -417,15 +434,14 @@ body
 
 
 
-/*-----------------------------
-------------POPULAR------------
------------------------------*/
+/*-------------------------------------
+------------POPULAR DESKTOP------------
+-------------------------------------*/
 
 
 
 .popularGrid
 {
-    grid-area: "popularGrid";
     display: grid;
     grid-template-rows: 4em 9.55em 9.55em 9.55em;
     grid-template-areas: 
@@ -476,6 +492,21 @@ body
     box-shadow: 0.1vw 0.3vw 0.7vw #dfd6d6;
 }
 
+.popArticle1
+{
+    grid-area: popArticle1;
+}
+
+.popArticle2
+{
+    grid-area: popArticle2;
+}
+
+.popArticle3
+{
+    grid-area: popArticle3;
+}
+
 .popOverlay
 {
     background-color: white;
@@ -518,9 +549,9 @@ body
 
 
 
-/*--------------------------------
-------------ACTIVITIES------------
---------------------------------*/
+/*----------------------------------------
+------------ACTIVITIES DESKTOP------------
+----------------------------------------*/
 
 
 
@@ -648,9 +679,9 @@ body
 
 
 
-/*----------------------------
-------------FOOTER------------
-----------------------------*/
+/*------------------------------------
+------------FOOTER DESKTOP------------
+------------------------------------*/
 
 
 .footerGrid
@@ -699,32 +730,24 @@ body
 }
 
 
-
 /*-----------------------------
----------MEDIA QUERIES---------
+----------VUE MOBILE-----------
 -----------------------------*/
 
 
 
-@media screen and (max-width: 615px) 
+@media screen and (max-width: 540px) 
 {
     .upperGrid
     {
         margin: 0;
         grid-template-rows: 0.4fr 0.7fr 1.3fr;
-        /*grid-column: 1fr;
-        grid-template-areas: 
-            "header header"
-            "search search"
-            "filters filters"
-            "popular popular"
-            "accomodations accomodations";*/
     }
 
 
-/*----------------------------
-------------HEADER------------
-----------------------------*/
+/*-----------------------------------
+------------HEADER MOBILE------------
+-----------------------------------*/
 
 
     .logo
@@ -742,41 +765,30 @@ body
     {
         float: none;
         display: inline-flex;
-        box-sizing: border-box;
-        justify-content: space-between;
         width: 100%;
         margin-right: 0;
     }
 
     .header nav ul li
     {
-        margin: 4.5vw 0 6vw 0;
-        padding-bottom: 4vw;
+        margin: 4.5vw 0 0 0;
+        padding: 0 0 4vw 0;
         border-bottom: 1vw solid #f2f2f2;
         width: 100%;
+        font-size: 4vw;
     }
 
-    .header nav ul li:hover
+    .header li:hover
     {
         border-top: white;
+        padding-top: 0.5vw;
         border-color: #0065FC;
-        
     }
 
-    .header nav ul li a
+    .header nav ul a
     {
-        font-size: 4vw;
-        
-    }
-
-    #accomodationsLink
-    {
-        padding-left: 10vw;
-    }
-
-    #popularLink
-    {
-        padding-left: 17vw;
+        width: 50%;
+        text-align: center;
     }
 
     .header nav a strong
@@ -792,9 +804,9 @@ body
     }
 
 
-/*----------------------------
-------------SEARCH------------
-----------------------------*/
+/*-----------------------------------
+------------SEARCH MOBILE------------
+-----------------------------------*/
 
     .search
     {
@@ -820,6 +832,7 @@ body
         border-radius: 4vw;
         display: inline-flex;
         align-self: center;
+        
     }
 
     #locationIcon
@@ -833,23 +846,19 @@ body
     #textArea
     {
         margin: 0.23vw 0 0 0;
-        padding: 2vw 0 0 4vw;
+        padding: 0 0 0 4vw;
         height: 12.5vw;
         width: 67.9vw;
+        font-size: 4.5vw;
         
     }
-
-    #textArea::placeholder
-    {
-        font-size: 4.5vw;
-    }
-
+   
     #textArea:focus
     {
         font-size: 4.5vw;
-        padding: 0 9vw 0.5vw 4vw;
-        
+        padding: 0 9vw 0 4vw;
     }
+
 
     #searchButton
     {
@@ -872,9 +881,9 @@ body
     }
 
 
-/*-----------------------------
-------------FILTERS------------
------------------------------*/
+/*------------------------------------
+------------FILTERS MOBILE------------
+------------------------------------*/
 
     .filters
     {
@@ -945,9 +954,9 @@ body
     }
 
 
-/*-----------------------------
-------------POPULAR------------
------------------------------*/
+/*------------------------------------
+------------POPULAR MOBILE------------
+------------------------------------*/
 
     .accPopGrid
     {
@@ -999,9 +1008,9 @@ body
 
     }
 
-/*-----------------------------------
-------------ACCOMODATIONS------------
------------------------------------*/
+/*------------------------------------------
+------------ACCOMODATIONS MOBILE------------
+------------------------------------------*/
 
     .accomodationsGrid
     {
@@ -1009,7 +1018,6 @@ body
         grid-column: 1 / span2;
         grid-row: 2;
         background-color: white;
-        /*height: 280em;*/
         margin: 0 3.9vw;
     }
 
@@ -1047,22 +1055,14 @@ body
     }
 
 
-/*--------------------------------
-------------ACTIVITIES------------
---------------------------------*/
+/*---------------------------------------
+------------ACTIVITIES MOBILE------------
+---------------------------------------*/
 
 
     .activitiesGrid
     {
         grid-template-rows: 18vw repeat(5, 55vw);
-        grid-template-areas: 
-            "activitiesTitle"
-            "actiArticle1"
-            "actiArticle2"
-            "actiArticle3"
-            "actiArticle4"
-            "actiArticle5"
-            "actiArticle6";
     }
 
     .activitiesTitle
@@ -1130,9 +1130,9 @@ body
     }
 
 
-/*----------------------------
-------------FOOTER------------
-----------------------------*/
+/*-----------------------------------
+------------FOOTER MOBILE------------
+-----------------------------------*/
 
 
     .footerGrid
@@ -1159,4 +1159,413 @@ body
         line-height: 4vw;
         margin: 0 0 0 7vw;
     }  
+}
+
+
+
+/*-----------------------------
+-------VUE INTERMEDIAIRE-------
+-----------------------------*/
+
+
+
+@media screen and (min-width: 540px) and (max-width: 950px)
+{
+    .upperGrid 
+    {
+        grid-template-rows: 0.6fr 0.8fr 1.3fr;
+    }
+
+/*------------------------------------------
+------------HEADER INTERMEDIAIRE------------
+------------------------------------------*/
+
+    .logo 
+    {
+        font-size: 1.8em;
+        padding-top: 1.8em;
+    }
+
+    .header nav ul li 
+    {
+        padding-top: 1.27em;
+        margin: 0.1em 4em 2em 0;
+        border-top: 0.3vw solid white;
+        font-size: 1.5em;
+    }
+
+    .header li:hover 
+    {
+        border-top: 0.3vw solid #0065FC;
+    }
+
+    .header nav a strong
+    {
+        font-size: 1.5em;
+        padding-top: 1.25em;
+        right: 0.9em;
+        border-top: 0.3vw solid white;
+    }
+
+    .header strong:hover
+    {
+        border-top: 0.3vw solid #0065FC;
+    }
+
+/*------------------------------------------
+------------SEARCH INTERMEDIAIRE------------
+------------------------------------------*/
+
+    .search h1 
+    {
+        font-size: 1.8em;
+      
+    }
+
+    .search p 
+    {
+        font-size: 2vw;
+    }
+
+    .searchbox 
+    {
+        height: 6.2vw;
+        width: 43vw;
+        border-radius: 2vw 0 0 2vw;
+    }
+
+    #locationIcon 
+    {
+        height: 5.9vw;
+        width: 6vw;
+        font-size: 2.2vw;
+        
+    }
+
+    #textArea
+    {
+        height: 6vw;
+        width: 29vw;
+        font-size: 2.2vw;
+        padding-right: 2vw;
+    }
+
+    #searchButton
+    {
+        height: 6.15vw;
+        width: 14.7vw;
+        font-size: 1.5vw;
+        padding-top: 1vw;
+        border-radius: 0 2vw 2vw 0 ;
+    }
+
+    .searchIcon 
+    {
+        display: none;
+    }
+
+/*------------------------------------------
+-----------FILTERS INTERMEDIAIRE------------
+------------------------------------------*/
+
+    .filters 
+    {
+        margin-top: 3vw;
+    }
+
+    .filters h2 
+    {
+        font-size: 2vw;
+        margin-top: 2.5vw;
+    }
+    .filtersContainer 
+    {
+        height: 6.8vw;
+        border: 0.2vw solid #f2f2f2;
+        border-radius: 4vw;
+        margin: 0 5vw 2vw 0;
+    }
+
+    .filtersContainer a 
+    {
+        font-size: 2vw;
+        margin: 0 2vw 0 2vw;
+    }
+
+    .filtersIconContainer 
+    {
+        width: 7vw;
+        height: 7vw;
+        border-radius: 4vw;
+    }
+
+    .filtersIconContainer i 
+    {
+        font-size: 2.7vw;
+    }
+
+    .filters p 
+    {
+         font-size: 2vw;
+    }
+
+    .infoIconContainer 
+    {
+        height: 3vw;
+        width: 3vw;
+        border-radius: 4vw;
+    }
+
+    #infoIcon
+    {
+        font-size: 1.5vw;
+        line-height: 2em;
+    }
+
+    
+
+/*------------------------------------------
+-----------POPULAR INTERMEDIAIRE------------
+------------------------------------------*/
+
+    .accPopGrid 
+    {
+        margin: 2em 0 0 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 63em 87em;
+    
+    }
+
+    .popularGrid
+    {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 7.5em repeat(2, 27em);
+        grid-template-areas:
+            "popularTitle popularIcon"
+            "popArticle1 popArticle2"
+            "popArticle3 popArticle3";
+        height: 63em;
+        padding: 0;
+        margin: 0 2em;
+        border-radius: 3em;
+        grid-column: span 1;
+    }
+
+    .popularTitle
+    {
+        margin: 1em 0 1.2em 1.3em;
+        font-size: 3vw;
+    }
+
+    #popularIcon
+    {
+        font-size: 3.5vw;
+        top: 4.6vw;
+        right: 1.5em;
+    }
+
+    .popularGrid article 
+    {
+        height: 23em;
+        width: auto;
+        padding: 0.5em;
+        border-radius: 3em;
+        margin: 1em 3em;
+        grid-column: span 1;
+    }
+
+    .popImg 
+    {
+        height: 73%;
+        width: 100%;
+        border-radius: 2.55em 2.55em 0 0;
+    }
+
+    .popOverlay 
+    {
+        left: 0%;
+        top: 69%;
+        width: 64em;
+        padding-left: 3.2em;
+    }
+
+    .popOverlay h3
+    {
+        font-size: 3.5em;
+    }
+
+    .popOverlay p 
+    {
+        margin-top: 0.3em;
+        font-size: 2.85em;
+    }
+
+    .popOverlay .starsContainer 
+    {
+        margin-top: 0;
+        font-size: 2.35em;
+    }
+
+/*------------------------------------------
+--------ACCOMODATIONS INTERMEDIAIRE---------
+------------------------------------------*/
+
+    .accomodationsGrid
+    {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 9em repeat(3, 25em);
+        margin: 0;
+        padding: 0 1.2em;
+        background: none;
+        height: 80em;
+    }
+
+    .accTitle
+    {
+        font-size: 3vw;
+        margin: 1em 1em 1em 0.3em;
+    }
+
+    .accomodationsGrid article
+    {
+        grid-column: span 2;
+        width: 28em;
+        height: 22em;
+        border-radius: 3em;
+    }
+
+    .accImg 
+    {
+        height: 14.8em;
+        border-radius: 2.6em 2.6em 0 0;
+    }
+
+    .accOverlay
+    {
+        padding: 0.8em 1.5em;
+    }
+    .accOverlay h3
+    {
+        font-size: 1.6em;
+    }
+
+    .accOverlay p 
+    {
+        font-size: 1.3em;
+        margin-top: 0.3em;
+    }
+
+    .starsContainer 
+    {
+        font-size: 1.1em;
+    }
+
+    .accViewMoreContainer 
+    {
+        margin-left: 4.7em;
+        height: 3em;
+        grid-column : span 3;
+    }
+
+    .accViewMore 
+    {
+        font-size: 1.9em;
+    }
+
+/*------------------------------------------
+---------ACTIVITIES INTERMEDIAIRE-----------
+------------------------------------------*/
+
+    .activitiesGrid 
+    {
+        height: 87em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 7em repeat(4, 20em);
+    }
+
+    .activitiesGrid h2
+    {
+        font-size: 3vw;
+        margin: 0 0 0 0.3em;
+    }
+    
+    .activitiesGrid article 
+    {
+        width: auto;
+    }
+
+    .actiArticle3
+    {
+        padding-top: 1.2em;
+    }
+
+    .actiArticle4
+    {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 2;
+    }
+
+    .actiImgTall 
+    {
+        height: 31em;
+    }
+
+    .actiImg2
+    {
+        height: 13.6em;
+    }
+
+    .actiImg3
+    {
+        height: 9.8em;
+    }
+
+    .actiImg5
+    {
+        height: 12.8em;
+    }
+
+    .actiImg6
+    {
+        height: 10.7em;
+    }
+
+    .actiOverlay 
+    {
+        font-size: 2vw;
+        height: 2em;
+    }
+
+/*------------------------------------------
+------------FOOTER INTERMEDIAIRE------------
+------------------------------------------*/
+
+    .footerGrid 
+    {
+        grid-template-columns: 26em 1.2fr 1fr;
+    }
+
+    .footerGrid div 
+    {
+        margin: 3em 0 3em 3em;;
+    }
+
+    .footerGrid h2 
+    {
+        font-size: 1.9em;
+    }
+
+    .footerGrid div ul
+    {
+        margin-right: 0;
+    }
+
+    .footerGrid div ul li
+    {
+        font-size: 1.4em;
+    }
 }
