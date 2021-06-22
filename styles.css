@@ -1,10 +1,11 @@
 /*------------------------------------------------------------------
 Vous avez la possibilité de naviguer plus facilement, via CTRL+F,
 en tapant le nom d'une section parmi: 
-HEADER/SEARCH/FILTERS/ACCOMODATIONS/POPULAR/ACTIVITIES/FOOTER
+HEADER/SEARCH/FILTERS/ACCOMODATIONS (HEBERGEMENTS)/POPULAR/ACTIVITIES
+/FOOTER
 Ainsi que le nom de la vue souhaitée : 
 DESKTOP/INTERMEDIAIRE/MOBILE
-Exemple : "SEARCH MOBILE"
+Exemple : "POPULAR MOBILE"
 ------------------------------------------------------------------*/
 
 /*-----------------------------
@@ -24,7 +25,7 @@ body
     font-size: 1.3vw;
 }
 
-.upperGrid
+.upperGrid 
 {
     display: grid;
     grid-template-rows: 0.4fr 1fr 1.3fr;
@@ -85,7 +86,7 @@ body
     color: #0065FC;
 }
 
-.header nav ul li a
+.header nav ul a
 {
     text-decoration: none;
     color: #000;
@@ -116,7 +117,13 @@ body
 ------------SEARCH DESKTOP------------
 ------------------------------------*/
 
+/* PRECISIONS SUR L'UTILISATION DES UNITES DE TAILLE "EM" ET "VW"
 
+Bien que connaissant leur définition et leur fonctionnement, il m'est arrivé
+d'utiliser ces deux unités selon la précision qu'elles m'offraient au sein d'un élément 
+(en plus de leur flexibilité). Il ne sera donc pas rare, dans la suite de ce code, 
+que des "em" côtoient des "vw".
+*/
 
 .search
 {
@@ -138,9 +145,16 @@ body
     margin-bottom: 1em;
 }
 
+/* STRUCTURE DE LA SEARCHBOX
+
+Ici l'élément .searchbox est une div englobant les trois éléments de la barre.
+Il fait office de background, dépassant légèrement du #textArea pour donner
+un effet de border. J'ai utilisé cette technique car je me heurtais à des
+soucis d'affichage avec la propriété "border".
+*/
+
 .searchBox
 {
-   
    height: 3.2vw;
    width: 24vw;
    border-radius: 1vw;
@@ -165,6 +179,11 @@ body
     font-size: 1.2vw;
     padding-left: 0.1vw;
 }
+
+/*PRECISIONS SUR L'UTILISATION DES "id" et "class"
+Etant donné que les propriétés Grid fonctionnent avec des "class", certains éléments
+qui auraient pu être des "id", car uniques, ont été définis en tant que "class".
+Les éléments pour qui cela n'avait pas d'importance ont été définis en tant qu' "id".*/
 
 #textArea
 {
@@ -203,8 +222,7 @@ body
     text-align: center;
     font-size: 1.4vw;
     font-weight: bold;
-    position: absolute;
-    vertical-align: top;   
+    position: absolute;   
 }
 
 .searchIcon
@@ -234,9 +252,7 @@ body
     margin: 0.81em 2em 0 0.3em;
 }
 
-
-
-.filtersContainer
+.filtersContainer /*Contient .filtersIconContainer+l'image+le lien*/
 {
     display: inline-flex;
     width: auto;
@@ -247,8 +263,8 @@ body
     margin: 0 2.4vw 0 0;
     padding-right: 1em;
     align-items: center;
-    transform: scale(1);
-    transition: 500ms all;
+    transform: scale(1);   /*Ces deux lignes ont pour but de fluidifier la*/
+    transition: 500ms all; /*transition entre les affichages.             */
 }
 
 .filtersIconContainer
@@ -308,7 +324,7 @@ body
 
 .filters p
 {
-    display: inline-block;
+    display: inline;
     font-size: 0.8em;
     font-weight: 500;
     padding-left: 1.1em;
@@ -325,7 +341,7 @@ article
     /*transition: 50ms all;*/
 }
 
-.accPopGrid
+.accPopGrid /*Contient .accomodationsGrid et .popularGrid*/
 {
     display: grid;
     grid-template-columns: 48em 1fr; 
@@ -339,7 +355,7 @@ article
     grid-template-rows: 4em 12.2em 12.2em 4em;
     background-color: #f2f2f2;
     height: 31.5em;
-    padding: 1em 1em 1em 1em;
+    padding: 1em;
     border-radius: 1em;
     margin-right: 1.5em;
 }
@@ -358,7 +374,7 @@ article
     padding-top: 0.4em;
 }
 
-.accomodationsGrid article
+.accomodationsGrid article /*Contient l'img+overlay+stars*/
 {
     margin: 0;
     border-radius: 1.2em;
@@ -507,6 +523,8 @@ article
     grid-area: popArticle3;
 }
 
+/*J'ai opté pour mettre l'overlay en position absolute
+afin de le positionner avec aisance sur la droite de la carte.*/
 .popOverlay
 {
     background-color: white;
@@ -566,7 +584,6 @@ article
         "actiArticle1 actiArticle3 actiArticle4 actiArticle6";
     grid-auto-flow: column;
     margin: 1.5em;
-    
 }
 
 .activitiesGrid a
@@ -588,7 +605,6 @@ article
 {
     margin: 1em;
     width: 16em;
-    
 }
 
 .actiArticle1
@@ -613,13 +629,12 @@ article
     padding-top: 0.4em;
 }
 
-.actiImgTall
+.actiImgTall /*Concerne les deux grandes cartes*/
 {
     width: 100%;
     height: 21em;
     object-fit: cover;
     border-radius: 1.2em 1.2em 0 0;
-    
 }
 
 .actiImg2
@@ -668,7 +683,6 @@ article
 .actiOverlay h3
 {
     padding: 0.3em 0.3em;
-    
 }
 
 .actiArticleContainer
@@ -691,7 +705,6 @@ article
     grid-auto-flow: column;
     margin: 0;
     background-color: #f2f2f2;
-    
 }
 
 .footerGrid div
@@ -778,10 +791,20 @@ article
         font-size: 4vw;
     }
 
+    /* PRECISIONS SUR L'UTILISATION DU HOVER SUR MOBILE (ET EN VUE INTERMEDIAIRE)
+
+    Ici nous aurions pu utiliser le pseudo-sélecteur ":visited" à la place du 
+    ":hover", afin de respecter le visuel proposé par la maquette.
+    Seulement en vérifiant l'affichage de la page sur mon smartphone,
+    je me suis rendu compte que le ":hover" se comportait comme un ":visited"
+    dans mon navigateur. Une fois l'ancre sélectionnée, l'effet du ":hover" reste
+    appliqué.
+    J'ai donc choisi de préserver ce pseudo-sélecteur sur les vues mobile et intermédiaire. */
+
     .header li:hover
     {
         border-top: white;
-        padding-top: 0.5vw;
+        padding-top: 0.6vw;
         border-color: #0065FC;
     }
 
@@ -798,6 +821,8 @@ article
         right: 4.7vw;
     }
 
+    /*Il m'a semblé que le "S'inscrire" était suffisamment mis en valeur,
+    la maquette ne montrant pas de border j'ai choisi de la dissimuler.*/
     .header strong:hover
     {
         border-color: white;
@@ -832,7 +857,6 @@ article
         border-radius: 4vw;
         display: inline-flex;
         align-self: center;
-        
     }
 
     #locationIcon
@@ -850,7 +874,6 @@ article
         height: 12.5vw;
         width: 67.9vw;
         font-size: 4.5vw;
-        
     }
    
     #textArea:focus
@@ -858,7 +881,6 @@ article
         font-size: 4.5vw;
         padding: 0 9vw 0 4vw;
     }
-
 
     #searchButton
     {
@@ -1005,7 +1027,6 @@ article
     .popOverlay
     {
         font-size: 2.2vw;
-
     }
 
 /*------------------------------------------
@@ -1014,9 +1035,9 @@ article
 
     .accomodationsGrid
     {
-        display: inline;
         grid-column: 1 / span2;
         grid-row: 2;
+        display: inline; /*Permet d'afficher simplement les cartes en une colone*/
         background-color: white;
         margin: 0 3.9vw;
     }
@@ -1067,14 +1088,13 @@ article
 
     .activitiesTitle
     {
-        grid-column: 1 / span4;
+        grid-column: 1 / span4; /*Afin que la carte prenne toute la largeur, sans modifier le grid*/
         margin: 2vw  0 2vw 3.5vw;
         font-size: 5.5vw;
     }
 
     .actiArticleContainer
     {
-       
         box-shadow: 0.5vw 1vw 2vw 0.2vw #f2f2f2;
         border-radius: 5vw;
         margin: 1vw 2.5vw;
@@ -1091,6 +1111,7 @@ article
         height: 35.5vw;
         border-radius: 5vw 5vw 0 0;
     }
+
     .actiOverlay
     {
         font-size: 3.5vw;
@@ -1167,9 +1188,17 @@ article
 -------VUE INTERMEDIAIRE-------
 -----------------------------*/
 
+/*Cette vue se veut un intermédiaire visuel entre la vue desktop et la vue mobile
+Elle s'affichera sur les tablettes, les smartphones en mode paysage, les micro-pc, etc.*/
 
+/* LE CHOIX DES BREAKPOINTS
 
-@media screen and (min-width: 540px) and (max-width: 950px)
+Initialement, cette vue devait couvrir une plage de largeur de viewport allant de
+450px à 1024px. J'ai ensuite réduit cette plage, que je trouvais trop importante,
+afin que les trois affichages ne soient à aucun moment aberrants.
+*/
+
+@media screen and (min-width: 541px) and (max-width: 950px)
 {
     .upperGrid 
     {
@@ -1219,7 +1248,6 @@ article
     .search h1 
     {
         font-size: 1.8em;
-      
     }
 
     .search p 
@@ -1239,7 +1267,6 @@ article
         height: 5.9vw;
         width: 6vw;
         font-size: 2.2vw;
-        
     }
 
     #textArea
@@ -1278,6 +1305,7 @@ article
         font-size: 2vw;
         margin-top: 2.5vw;
     }
+
     .filtersContainer 
     {
         height: 6.8vw;
@@ -1333,7 +1361,6 @@ article
         margin: 2em 0 0 0;
         grid-template-columns: 1fr;
         grid-template-rows: 63em 87em;
-    
     }
 
     .popularGrid
@@ -1427,7 +1454,7 @@ article
     .accTitle
     {
         font-size: 3vw;
-        margin: 1em 1em 1em 0.3em;
+        margin: 1em 1em 1em 1.8em;
     }
 
     .accomodationsGrid article
@@ -1503,7 +1530,7 @@ article
         padding-top: 1.2em;
     }
 
-    .actiArticle4
+    .actiArticle4 /*En plaçant cette carte de cette manière, les autres se positionnent comme souhaité*/
     {
         grid-column: 1 / span 1;
         grid-row: 4 / span 2;
