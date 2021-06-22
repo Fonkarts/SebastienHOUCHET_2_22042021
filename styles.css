@@ -12,7 +12,6 @@ Exemple : "POPULAR MOBILE"
 ----------VUE DESKTOP----------
 -----------------------------*/
 
-
 *
 {
     margin: 0;
@@ -35,14 +34,11 @@ body
         "search search"
         "filters filters";
     margin: 0 2.5em;
-    
 }
-
 
 /*------------------------------------
 ------------HEADER DESKTOP------------
 ------------------------------------*/
-
 
 .header
 {
@@ -111,8 +107,6 @@ body
     border-top: 0.15em solid #0065FC;
 }
 
-
-
 /*------------------------------------
 ------------SEARCH DESKTOP------------
 ------------------------------------*/
@@ -163,7 +157,6 @@ soucis d'affichage avec la propriété "border".
    font-size: 1.2vw;
 }
 
-
 .locationIconContainer
 {
     margin: 0;
@@ -208,7 +201,6 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
     opacity: 1;
 }
 
-
 #searchButton
 {
     font-family: raleway, sans-serif;
@@ -230,13 +222,9 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
     display: none;
 }
 
-
-
 /*-------------------------------------
 ------------FILTERS DESKTOP------------
 -------------------------------------*/
-
-
 
 .filters
 {
@@ -313,7 +301,6 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
     text-align: center;
 }
 
-
 #infoIcon
 {
     color: #0065FC; 
@@ -330,16 +317,9 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
     padding-left: 1.1em;
 }
 
-
-
 /*-------------------------------------------
 ------------ACCOMODATIONS DESKTOP------------
 -------------------------------------------*/
-
-article 
-{
-    /*transition: 50ms all;*/
-}
 
 .accPopGrid /*Contient .accomodationsGrid et .popularGrid*/
 {
@@ -445,16 +425,11 @@ article
     font-weight: 800;
     color: black;
     font-size: 1em;
-    
 }
-
-
 
 /*-------------------------------------
 ------------POPULAR DESKTOP------------
 -------------------------------------*/
-
-
 
 .popularGrid
 {
@@ -525,6 +500,7 @@ article
 
 /*J'ai opté pour mettre l'overlay en position absolute
 afin de le positionner avec aisance sur la droite de la carte.*/
+
 .popOverlay
 {
     background-color: white;
@@ -565,13 +541,9 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     border-radius: 0.7em 0 0 0.7em;
 }
 
-
-
 /*----------------------------------------
 ------------ACTIVITIES DESKTOP------------
 ----------------------------------------*/
-
-
 
 .activitiesGrid
 {
@@ -691,12 +663,9 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     box-shadow: 0.08vw 0.4vw 0.6vw #f2f2f2;
 }
 
-
-
 /*------------------------------------
 ------------FOOTER DESKTOP------------
 ------------------------------------*/
-
 
 .footerGrid
 {
@@ -712,7 +681,6 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     float: left;
     margin: 2em;
 }
-
 
 .footerGrid h2
 {
@@ -742,12 +710,9 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     color: black;
 }
 
-
 /*-----------------------------
 ----------VUE MOBILE-----------
 -----------------------------*/
-
-
 
 @media screen and (max-width: 540px) 
 {
@@ -757,11 +722,9 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         grid-template-rows: 0.4fr 0.7fr 1.3fr;
     }
 
-
 /*-----------------------------------
 ------------HEADER MOBILE------------
 -----------------------------------*/
-
 
     .logo
     {
@@ -823,11 +786,11 @@ afin de le positionner avec aisance sur la droite de la carte.*/
 
     /*Il m'a semblé que le "S'inscrire" était suffisamment mis en valeur,
     la maquette ne montrant pas de border j'ai choisi de la dissimuler.*/
+
     .header strong:hover
     {
         border-color: white;
     }
-
 
 /*-----------------------------------
 ------------SEARCH MOBILE------------
@@ -902,7 +865,6 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         font-size: 4vw;
     }
 
-
 /*------------------------------------
 ------------FILTERS MOBILE------------
 ------------------------------------*/
@@ -974,7 +936,6 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         font-size: 2.8vw;
         padding-top: 0.3vw;
     }
-
 
 /*------------------------------------
 ------------POPULAR MOBILE------------
@@ -1075,11 +1036,9 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         margin: 9vw 0 0 0;
     }
 
-
 /*---------------------------------------
 ------------ACTIVITIES MOBILE------------
 ---------------------------------------*/
-
 
     .activitiesGrid
     {
@@ -1150,11 +1109,9 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         grid-row-start: 7;
     }
 
-
 /*-----------------------------------
 ------------FOOTER MOBILE------------
 -----------------------------------*/
-
 
     .footerGrid
     {
@@ -1181,8 +1138,6 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         margin: 0 0 0 7vw;
     }  
 }
-
-
 
 /*-----------------------------
 -------VUE INTERMEDIAIRE-------
@@ -1349,8 +1304,6 @@ afin que les trois affichages ne soient à aucun moment aberrants.
         font-size: 1.5vw;
         line-height: 2em;
     }
-
-    
 
 /*------------------------------------------
 -----------POPULAR INTERMEDIAIRE------------
