@@ -46,12 +46,12 @@ body
     margin-bottom: 1em;
 }
 
-.logo
+.logo /* <h1> */
 {
-    height: 2.5em;
-    width: 5em;
+    height: 1.8em;
+    width: 3.6em;
     float: left;
-    padding-top: 2.5em;
+    padding-top: 2em;
 }
 
 .header nav
@@ -70,22 +70,24 @@ body
 {
     float: left;
 	margin: 0.1em 2em 2em 1.6em;
-    padding-top: 2.6em;
-    border-top: 0.15em solid white;
     font-size: 0.85em;
     font-weight: 500;
 }
 
-.header li:hover
-{
-    border-top: 0.15em solid #0065FC;
-    color: #0065FC;
-}
-
-.header nav ul a
+.header nav ul li a
 {
     text-decoration: none;
     color: #000;
+    border-top: 0.15em solid white;
+    display: block;
+    height: 100%;
+    padding-top: 2.62em;
+}
+
+.header a:hover
+{
+    border-top: 0.15em solid #0065FC;
+    color: #0065FC;
 }
 
 .header nav a strong
@@ -99,7 +101,7 @@ body
     border-top: 0.15em solid white;
     text-decoration: none;
     font-size: 0.85em;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .header strong:hover
@@ -125,7 +127,7 @@ que des "em" côtoient des "vw".
     
 }
 
-.search h1
+.search h2
 {
     font-size: 1.15em;
     font-weight:800;
@@ -149,7 +151,7 @@ soucis d'affichage avec la propriété "border".
 
 .searchBox
 {
-   height: 3.2vw;
+   height: 3.3vw;
    width: 24vw;
    border-radius: 1vw;
    background-color: #f2f2f2;
@@ -182,7 +184,7 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
 {
     font-family: raleway, sans-serif;
     font-weight: 800;
-    font-size: 1.4vw;
+    font-size: 1.28vw;
     border: none;
     height: 3vw;
     width: 16vw;
@@ -191,11 +193,6 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
 }
 
 #textArea::placeholder
-{
-    color: black;
-}
-
-#textArea::-moz-placeholder
 {
     color: black;
     opacity: 1;
@@ -208,16 +205,21 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
     color: white;
     border-radius: 0 0.9vw 0.9vw 0;
     border: none;
-    height: 3.2vw;
+    height: 3.34vw;
     width: 8.7vw;
-    padding-top: 0.35vw;
     text-align: center;
-    font-size: 1.4vw;
+    font-size: 1.3vw;
     font-weight: bold;
     position: absolute;   
 }
 
-.searchIcon
+#searchButton span
+{
+    font-size: 1.2vw;
+    font-weight: 800;
+}
+
+#searchButton i
 {
     display: none;
 }
@@ -283,9 +285,7 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
 
 .filtersContainer:hover
 {
-    background: -moz-radial-gradient(#0065FC, #DEEBFF);
     background: radial-gradient(#DEEBFF, #0065FC);
-    -moz-transform: scale(1.1);
     transform: scale(1.1);
     transition: 500ms all;
 }
@@ -362,8 +362,8 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
     height: 9.9em;
     width: 12.5em;
     justify-self: center;
+    background-color: white;
     padding: 0.3em;
-    background: white;
     box-shadow: 0.1vw 0.3vw 0.7vw #dfd6d6;
 }
 
@@ -377,7 +377,6 @@ Les éléments pour qui cela n'avait pas d'importance ont été définis en tant
 
 .accOverlay
 {
-    background-color: white;
     padding: 0.4em 0.8em;
     width: auto;
 }
@@ -673,6 +672,7 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: column;
     margin: 0;
+    padding-left: 1vw;
     background-color: #f2f2f2;
 }
 
@@ -728,13 +728,13 @@ afin de le positionner avec aisance sur la droite de la carte.*/
 
     .logo
     {
-        font-size: 5vw;
+        font-size: 7vw;
         padding: 5.5vw 0 0 4.5vw;
     }
 
     .header nav
     {
-        height: 42vw;
+        height: 40vw;
     }
 
     .header nav ul 
@@ -748,10 +748,16 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     .header nav ul li
     {
         margin: 4.5vw 0 0 0;
-        padding: 0 0 4vw 0;
-        border-bottom: 1vw solid #f2f2f2;
-        width: 100%;
+        width: 50%;
         font-size: 4vw;
+        text-align: center;
+        border-top: none;
+    }
+
+    .header nav ul li a 
+    {
+        padding: 1.5vw 0 0 0;
+        border-bottom: 1vw solid #f2f2f2;
     }
 
     /* PRECISIONS SUR L'UTILISATION DU HOVER SUR MOBILE (ET EN VUE INTERMEDIAIRE)
@@ -764,17 +770,11 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     appliqué.
     J'ai donc choisi de préserver ce pseudo-sélecteur sur les vues mobile et intermédiaire. */
 
-    .header li:hover
+    .header a:hover
     {
-        border-top: white;
-        padding-top: 0.6vw;
+        border-top: none;
+        padding-top: 2.1vw;
         border-color: #0065FC;
-    }
-
-    .header nav ul a
-    {
-        width: 50%;
-        text-align: center;
     }
 
     .header nav a strong
@@ -782,6 +782,7 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         font-size: 4vw;
         font-weight: 800;
         right: 4.7vw;
+        padding-top: 2.3em;
     }
 
     /*Il m'a semblé que le "S'inscrire" était suffisamment mis en valeur,
@@ -801,7 +802,7 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         margin: 0 5vw;
     }
 
-    .search h1
+    .search h2
     {
         font-size: 5.82vw;
     }
@@ -814,9 +815,8 @@ afin de le positionner avec aisance sur la droite de la carte.*/
 
     .searchBox
     {
-        margin: 0 0.9vw;
         width: auto;
-        height: 13vw;
+        height: 12.9vw;
         border-radius: 4vw;
         display: inline-flex;
         align-self: center;
@@ -833,16 +833,15 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     #textArea
     {
         margin: 0.23vw 0 0 0;
-        padding: 0 0 0 4vw;
+        padding: 0 9vw 0 4vw;
         height: 12.5vw;
-        width: 67.9vw;
+        width: 53.5vw;
         font-size: 4.5vw;
     }
    
     #textArea:focus
     {
         font-size: 4.5vw;
-        padding: 0 9vw 0 4vw;
     }
 
     #searchButton
@@ -854,15 +853,16 @@ afin de le positionner avec aisance sur la droite de la carte.*/
         right: -6vw;
     }
 
-    #searchButton p 
+    #searchButton span 
     {
         display: none;
     }
 
-    .searchIcon
+    #searchButton i
     {
         display: block;
         font-size: 4vw;
+        color: white;
     }
 
 /*------------------------------------
@@ -878,7 +878,7 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     {
         font-size: 4.7vw;
         float: none;
-        margin: 9.4vw 0 3.3vw 0;
+        margin: 8.4vw 0 3.3vw 0;
     }
 
     .filters p 
@@ -944,9 +944,9 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     .accPopGrid
     {
         display: grid;
-        grid-template-rows: 166vw 368vw;
+        grid-template-rows: 166vw 354vw;
         grid-template-columns: 1fr;
-        margin: 0 0 10vw 0;
+        margin: 0 0 3vw 0;
     }
 
     .popularGrid
@@ -958,7 +958,7 @@ afin de le positionner avec aisance sur la droite de la carte.*/
 
     .popularTitle
     {
-        margin: 8.5vw 3.9vw;
+        margin: 9.5vw 0 0 3.9vw;
         padding: 0;
         font-size: 5.6vw;
     }
@@ -966,7 +966,7 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     #popularIcon
     {
         font-size: 6vw;
-        top: 9.1vw;
+        top: 10.1vw;
         right: 3.9vw;
     }
 
@@ -1006,16 +1006,16 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     .accTitle
     {
         font-size: 5.6vw;
-        margin: 3vw 0 6vw 0.1vw;
+        margin: 4vw 0 4vw 0.1vw;
     }
 
     .accomodationsGrid article
     {
         width: auto;
-        height: 50vw;
+        height: 48vw;
         margin-bottom: 3.3vw;
+        padding: 1.3vw;
         border-radius: 6vw;
-        border: 1.1vw solid white;
         box-shadow: 0.4vw 0.8vw 1.4vw 0.2vw #f2f2f2;
     }
 
@@ -1028,12 +1028,24 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     .accOverlay
     {
         font-size: 5vw;
+        padding: 1.2vw 2.5vw;
+    }
+
+    .accOverlay p 
+    {
+        margin-top: 1vw;
+        font-size: 0.7em;
+    }
+
+    .starsContainer 
+    {
+        font-size: 0.6em;
     }
 
     .accViewMoreContainer
     {
         font-size: 4.5vw;
-        margin: 9vw 0 0 0;
+        margin: 7vw 0 0 0;
     }
 
 /*---------------------------------------
@@ -1048,7 +1060,7 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     .activitiesTitle
     {
         grid-column: 1 / span4; /*Afin que la carte prenne toute la largeur, sans modifier le grid*/
-        margin: 2vw  0 2vw 3.5vw;
+        margin: 5vw  0 2vw 3.5vw;
         font-size: 5.5vw;
     }
 
@@ -1117,12 +1129,8 @@ afin de le positionner avec aisance sur la droite de la carte.*/
     {
         grid-template-rows: 42vw repeat(2, 34vw);
         grid-template-columns: 1fr;
-        grid-template-areas: 
-        "div"
-        "div"
-        "div";
-        padding-top: 12vw;
-        margin-top: 11vw;
+        padding: 12vw 0 0 0;
+        margin-top: 10vw;
     }
 
     .footerGrid h2
@@ -1132,7 +1140,6 @@ afin de le positionner avec aisance sur la droite de la carte.*/
 
     .footerGrid div
     {
-        grid-area: "div";
         font-size: 5vw;
         line-height: 4vw;
         margin: 0 0 0 7vw;
@@ -1172,13 +1179,17 @@ afin que les trois affichages ne soient à aucun moment aberrants.
 
     .header nav ul li 
     {
-        padding-top: 1.27em;
         margin: 0.1em 4em 2em 0;
-        border-top: 0.3vw solid white;
         font-size: 1.5em;
     }
 
-    .header li:hover 
+    .header nav ul li a 
+    {
+        border-top: 0.3vw solid white;
+        padding-top: 1.27em;
+    }
+
+    .header a:hover 
     {
         border-top: 0.3vw solid #0065FC;
     }
@@ -1200,7 +1211,12 @@ afin que les trois affichages ne soient à aucun moment aberrants.
 ------------SEARCH INTERMEDIAIRE------------
 ------------------------------------------*/
 
-    .search h1 
+    .logo 
+    {
+        padding-top: 1em;
+    }
+
+    .search h2 
     {
         font-size: 1.8em;
     }
@@ -1210,9 +1226,9 @@ afin que les trois affichages ne soient à aucun moment aberrants.
         font-size: 2vw;
     }
 
-    .searchbox 
+    .searchBox 
     {
-        height: 6.2vw;
+        height: 6.3vw;
         width: 43vw;
         border-radius: 2vw 0 0 2vw;
     }
@@ -1220,7 +1236,7 @@ afin que les trois affichages ne soient à aucun moment aberrants.
     #locationIcon 
     {
         height: 5.9vw;
-        width: 6vw;
+        width: 5.5vw;
         font-size: 2.2vw;
     }
 
@@ -1234,14 +1250,18 @@ afin que les trois affichages ne soient à aucun moment aberrants.
 
     #searchButton
     {
-        height: 6.15vw;
+        height: 6.25vw;
         width: 14.7vw;
         font-size: 1.5vw;
-        padding-top: 1vw;
         border-radius: 0 2vw 2vw 0 ;
     }
 
-    .searchIcon 
+    #searchButton span 
+    {
+        font-size: 2vw;
+    }
+
+    #searchButton i
     {
         display: none;
     }
@@ -1527,11 +1547,12 @@ afin que les trois affichages ne soient à aucun moment aberrants.
     .footerGrid 
     {
         grid-template-columns: 26em 1.2fr 1fr;
+        
     }
 
     .footerGrid div 
     {
-        margin: 3em 0 3em 3em;;
+        margin: 3em 0 3em 2em;;
     }
 
     .footerGrid h2 
